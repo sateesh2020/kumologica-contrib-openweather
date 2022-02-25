@@ -1,0 +1,27 @@
+{
+  "name": "@sateesh2020/kumologica-contrib-openweather",
+  "version": "0.0.2",
+  "description": "Node that connects with the Openweather platform to get weather of city",
+  "author": "sateesh2020",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sateesh2020/kumologica-contrib-openweather.git"
+  },
+  "license": "Copyright",
+  "keywords": [
+    "kumologica",
+    "platform",
+    "openweather"
+  ],
+  "scripts": {
+    "pub": "npm publish --access public"
+  },
+  "dependencies": {
+    "@kumologica/devkit": "latest"
+  },
+  "kumologica": {
+    "nodes": {
+      "WeatherByCity": "lib/WeatherByCity.js"
+    }
+  }
+}

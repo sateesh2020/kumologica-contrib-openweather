@@ -1,0 +1,67 @@
+<script type="text/x-kumologica" data-template-name="WeatherByCity">
+  <style scoped>
+    .hiddenAttrs {display:none;}
+    .visibleAttrs {display:block;}
+  </style>
+
+  <div class="kumo-window">
+
+    <!-- Display name -->
+    <div class="kumo-section">
+      <div class="kumo-row">
+        <label class="kumo-row-label" for="node-input-name"> <span>Display Name</span></label>
+        <input class="kumo-row-editable" type="text" id="node-input-name" placeholder="Name">
+      </div>
+    </div>
+
+    <!-- General Settings -->
+    <div class="kumo-section-title">General</div>
+    <div class="kumo-section">
+      <div class="form-row" id="city">
+        <label class="kumo-row-label" for="city>City</label>
+        <input type="text" id="city" placeholder="City name">
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript">
+  App.nodes.registerType("WeatherByCity", {
+    category: "Platforms",
+    icon: "open-weather.png",
+    color: "#e96e50",
+    defaults: {
+      name: { value: "Open Weather" },
+      city: { value: "", templateable: true, required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+    label: function () {
+      return this.name || "WeatherByCity";
+    },
+  });
+</script>
+
+<script type="text/x-kumologica" data-help-name="WeatherByCity">
+  <h4> Description </h4>
+  <p>WeatherByCity node connects with open weather to fetch weather of a city</p>
+
+   <h4> Properties </h4>
+   <ul>
+   <li><i>City</i> - (Required). City for which weather forecast is required</li>
+
+   </ul>
+
+   <h4> Throws </h4>
+   <ul>
+     <li>WeatherByCityError </li>
+   </ul>
+
+
+   <h4> Returns </h4>
+   Payload will not be overwritten by this node.
+   None of the variables will be overwritten or enriched by this node. Response from the node can be accessed using <code>msg.header.pagerduty</code>.
+
+   <h4> More info </h4>
+   <a href="https://docs.kumologica.com/docs/references/PagerDutyNode.html">Kumologica Documentation</a>
+</script>
